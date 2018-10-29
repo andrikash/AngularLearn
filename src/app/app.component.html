@@ -4,9 +4,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <button class="btn btn-primary">Add a car</button>
+      <button class="btn btn-primary" (click)="addCar()">Add a car</button>
+      <div></div>
       <app-car></app-car>
       <app-car></app-car>
     </div>
+    <input type="text" class="form-control" (keyup)="onKeyUp($event)">
+    <p>{{ inputText }}</p>
   </div>
 </div>
