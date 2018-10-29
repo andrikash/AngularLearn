@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   carText = '';
   inputText = '';
-  onKeyUp(event : Event){
+  onKeyUp(event: Event) {
   this.inputText = (<HTMLInputElement>event.target).value;
     // console.log(this.inputText);
   }
-  addCar(){
+  addCar() {
     this.carText = 'helloooo';
   }
   constructor() {
