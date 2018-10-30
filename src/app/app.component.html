@@ -9,7 +9,7 @@
       <app-car></app-car>
       <app-car></app-car>
     </div>
-    <input type="text" class="form-control" (keyup)="onKeyUp($event)">
+    <input type="text" class="form-control" #myText (keyup.enter)="onKeyUp(myText.value)">
     <p>{{ inputText }}</p>
   </div>
 </div>

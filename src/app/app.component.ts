@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   carText = '';
   inputText = '';
-  onKeyUp(event: Event) {
-  this.inputText = (<HTMLInputElement>event.target).value;
-    // console.log(this.inputText);
+  onKeyUp(value) {
+    this.inputText = value;
   }
   addCar() {
     this.carText = 'helloooo';
   }
+
   constructor() {
 
   }
