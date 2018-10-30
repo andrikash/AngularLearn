@@ -4,13 +4,21 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <button class="btn btn-primary" [disabled]="!time()" (click)="addCar()">Add a car</button>
-      <p>{{carText}}</p>
+      <input type="text" class="form-control" [(ngModel)]="carName">
+      <button class="btn btn-primary" (click)="pushButton()">Show all users</button>
+      <div *ngIf="push">
+        <ul *ngFor="let u of forCycle">
+          <li>{{u}}</li>
+        </ul>
+      </div>
+
+      <!--<p *ngIf="!push; else success">Car didn't add</p>-->
+      <!--<ng-template #success>-->
+        <!--<p>Car added</p>-->
+      <!--</ng-template>-->
+      <p>{{carName}}</p>
       <app-car></app-car>
       <app-car></app-car>
     </div>
-    <input type="text" class="form-control" #myText (keyup.enter)="onKeyUp(myText.value)">
-    <input type="text" class="form-control" [(ngModel)]="inputText">
-    <p>{{ inputText }}</p>
   </div>
 </div>
