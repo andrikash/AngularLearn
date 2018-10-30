@@ -6,6 +6,14 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  bool = false;
+  time(){
+  setTimeout(()=>{
+    this.bool = true;
+    },4000
+  );
+  return this.bool
+}
   carText = '';
   inputText = '';
   onKeyUp(value) {
@@ -16,6 +24,5 @@ export class AppComponent {
   }
 
   constructor() {
-
   }
 }
