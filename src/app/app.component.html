@@ -5,18 +5,21 @@
   <div class="row">
     <div class="col-xs-12">
       <input type="text" class="form-control" [(ngModel)]="carName">
-      <button class="btn btn-primary" (click)="pushButton()">Show all users</button>
-      <div *ngIf="push">
-        <ul *ngFor="let u of forCycle">
-          <li>{{u}}</li>
+      <input type="text" class="form-control " [(ngModel)]="carYear">
+      <button class="btn btn-primary" (click)="pushButton()">Add user</button>
+        <ul>
+          <li *ngFor="let u of forCycle; let idx = index">
+            <div [ngStyle]="{'font-weight' : (idx +1)%2 ===0 ? 'bold' : ''}" [ngClass]="{'alert alert-danger':dangerStatus}"><b>{{idx+1}}</b> - Name : {{u.name}}, year: {{u.year}}</div>
+          </li>
+          <button class="btn btn-primary" (click)="turnIntoDanger()">Into danger</button>
         </ul>
-      </div>
+
+      <div>{{getDate() | date:'medium'}}</div>
 
       <!--<p *ngIf="!push; else success">Car didn't add</p>-->
       <!--<ng-template #success>-->
         <!--<p>Car added</p>-->
       <!--</ng-template>-->
-      <p>{{carName}}</p>
       <app-car></app-car>
       <app-car></app-car>
     </div>
