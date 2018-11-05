@@ -1,5 +1,10 @@
 
 <p>
-  Car name : {{name}}
-  and year : {{year}}
+  Car name : {{carItem.name}}
+  and year : {{carItem.year}}
+  and engineYear : {{carItem.engineYear}}
+  id + {{carItem}}
 </p>
+<p *ngIf="carItem.year-carItem.engineYear >=5;else elseBlock" class="alert alert-danger">Engine is old.</p>
+<ng-template #elseBlock><p class="alert alert-info">Engine is new.</p></ng-template>
+
